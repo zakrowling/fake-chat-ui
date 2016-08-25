@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     $('.options a').click(function(){
 
-        message_delay = 500;
+        message_delay = 1000;
         active_response = $('.messages .message.active .response');
         active_message = $('.messages .message.active .question');
 
@@ -37,8 +37,16 @@ $(document).ready(function() {
             $('.messages .message.active .question').show();
         }, message_delay);        
         $('.messages .message.active .question').text('...').addClass('loading');
+
+        // Once response has loaded, do this
         setTimeout(function(){
             $('.messages .message.active .question').text(message).removeClass('loading');
+
+            page_bottom = $(document).height();
+
+            $('html, body').animate({
+                scrollTop: page_bottom
+            }, 500);
 
             // Update reply options
             $('.options').css('bottom', '10');

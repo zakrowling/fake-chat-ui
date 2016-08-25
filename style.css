@@ -15,6 +15,20 @@ body {
 	margin: 0 auto;
 }
 
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac */
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
 
 
 /*	Options
@@ -54,12 +68,16 @@ body {
 /*	Messages
 	===================================	*/
 
+.messages {
+	padding-bottom: 100px;
+}
+
 .messages p {
 	display: none;
 	float: left;
 	clear: both;
 	padding: 10px 14px;
-	margin: 4px 0;
+	margin: 6px 0;
 	max-width: 80%;
 	background: #fff;
 	border-radius: 4px;
