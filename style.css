@@ -1,0 +1,202 @@
+
+/*	Main Styles
+	===================================	*/
+
+
+body {
+	padding: 0;
+	margin: 0;
+	font: 15px Arial, Helvetica, Sans-serif;
+	background: #e8e8e8;
+}
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+}
+
+
+
+/*	Options
+	===================================	*/
+
+.options {
+	position: fixed;
+	padding: 20px 0;
+	width: 100%;
+	text-align: center;
+	bottom: 10px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.options a:link,
+.options a:visited {
+	margin: 0 4px;
+	padding: 10px 14px;
+	border: 1px #989898 solid;
+	border-radius: 4px;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #565656;
+	text-decoration: none;
+}
+
+.options a:hover {
+	color: #000;
+	border-color: #000;
+}
+
+
+
+/*	Messages
+	===================================	*/
+
+.messages p {
+	display: none;
+	float: left;
+	clear: both;
+	padding: 10px 14px;
+	margin: 4px 0;
+	max-width: 80%;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+
+.messages .message:first-child p {
+	-moz-animation: text-pop 1 ease 0.5s;
+	-webkit-animation: text-pop 1 ease 0.5s;
+	animation: text-pop 1 ease 0.5s;
+}
+
+.messages p.loading {
+	-moz-animation: text-load infinite ease 0.5s;
+	-webkit-animation: text-load infinite ease 0.5s;
+	animation: text-load infinite ease 0.5s;
+}
+
+.messages .message:first-child p:first-child,
+.messages .message.active p:first-child,
+.messages .message.asked p {
+	display: block;
+}
+
+.messages p.response {
+	float: right;
+	color: #fff;
+	background: #d8a731;
+	-moz-animation: text-animate 1 ease 0.5s;
+	-webkit-animation: text-animate 1 ease 0.5s;
+	animation: text-animate 1 ease 0.5s;
+}
+
+
+
+/*	=============================================================
+	Chat Animations
+	=============================================================	*/
+
+
+@-moz-keyframes text-animate {
+    0% {
+        -moz-transform: translateY(30px);
+		opacity: 0;
+    }
+    100% {
+        -moz-transform: translateY(0);
+		opacity: 1;
+    }
+}
+@-webkit-keyframes text-animate {
+    0% {
+        -webkit-transform: translateY(30px);
+		opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+		opacity: 1;
+    }
+}
+@keyframes text-animate {
+    0% {
+        transform: translateY(30px);
+		opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+		opacity: 1;
+    }
+}
+
+
+@-moz-keyframes text-pop {
+    0% {
+        -moz-transform: scale(0);
+		opacity: 0;
+    }
+    100% {
+        -moz-transform: scale(1);
+		opacity: 1;
+    }
+}
+@-webkit-keyframes text-pop {
+    0% {
+        -webkit-transform: scale(0);
+		opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+		opacity: 1;
+    }
+}
+@keyframes text-pop {
+    0% {
+        transform: scale(0);
+		opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+		opacity: 1;
+    }
+}
+
+
+@-moz-keyframes text-load {
+    0% {
+        -moz-transform: scale(1);
+    }
+    50% {
+    	-moz-transform: scale(0.9);
+    	-moz-box-shadow: inset 0 0 100px #efefef;
+    }
+    100% {
+        -moz-transform: scale(1);
+    }
+}
+@-webkit-keyframes text-load {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+    	-webkit-transform: scale(0.9);
+    	-webkit-box-shadow: inset 0 0 100px #efefef;
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes text-load {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+    	transform: scale(0.9);
+    	box-shadow: inset 0 0 100px #efefef;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

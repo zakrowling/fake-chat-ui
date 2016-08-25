@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Chat UI</title>
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen,projection" />
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="chat.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+	<div class="options">
+		<a href="javascript:;" class="option-one"></a>
+		<a href="javascript:;" class="option-two"></a>
+	</div>
+
+	<div class="container">
+		<div class="messages" data-opening-message="Hey, welcome to my chat! What would you like to know?">
+			<div class="message active">
+				<p class="question" data-message-one="I am a chatbot. Who are you?" data-message-two="I dunno. You tell me. Who the hell are you anyway?"></p>
+				<p class="response" data-response-one="Who are you?" data-response-two="Why am I here?"></p>
+			</div>
+			<div class="message">
+				<p class="question" data-message-one="Nice to meet you" data-message-two="Mate, you are rude"></p>
+				<p class="response" data-response-one="I am a friend" data-response-two="I am not telling you"></p>
+			</div>
+			<div class="message">
+				<p class="question" data-message-one="Okay, you can see it at <a href='#'>test</a>" data-message-one="Okay, you can see it at <a href='#'>test</a>"></p>
+				<p class="response" data-response-one="Goodbye" data-response-two=""></p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
