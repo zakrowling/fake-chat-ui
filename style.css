@@ -40,6 +40,9 @@ body {
 	width: 100%;
 	text-align: center;
 	bottom: 10px;
+    -moz-animation: show-options 1 ease 1s;
+    -webkit-animation: show-options 1 ease 1s;
+    animation: show-options 1 ease 1s;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
@@ -73,6 +76,7 @@ body {
 }
 
 .messages p {
+    position: relative;
 	display: none;
 	float: left;
 	clear: both;
@@ -82,6 +86,21 @@ body {
 	background: #fff;
 	border-radius: 4px;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+
+.messages p.question {
+    left: 30px;
+}
+
+.messages p.question::before {
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: -80px;
+    -moz-transform: scale(0.38);
+    -webkit-transform: scale(0.38);
+    transform: scale(0.38);
+    content: url('avatar.png');
 }
 
 .messages .message:first-child p {
@@ -116,6 +135,40 @@ body {
 /*	=============================================================
 	Chat Animations
 	=============================================================	*/
+
+@-moz-keyframes show-options {
+    0% {
+        bottom: -100px;
+    }
+    50% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+@-webkit-keyframes show-options {
+    0% {
+        bottom: -100px;
+    }
+    50% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: 10px;
+    }    
+}
+@keyframes show-options {
+    0% {
+        bottom: -100px;
+    }
+    50% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: 10px;
+    }   
+}
 
 
 @-moz-keyframes text-animate {

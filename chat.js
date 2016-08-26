@@ -20,9 +20,11 @@ $(document).ready(function() {
         if ($(this).hasClass('option-one')) {
             message = active_message.data('message-one');
             response = active_response.data('response-one');
+            setTimeout(function(){$('.option-two').hide();}, message_delay);  
         } else {
             message = active_message.data('message-two');
             response = active_response.data('response-two');
+            setTimeout(function(){$('.option-one').hide();}, message_delay);  
         }
         active_response.text(response);
         active_response.show();
