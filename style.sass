@@ -1,0 +1,101 @@
+body
+  padding: 0
+  margin: 0
+  font: 15px Arial, Helvetica, Sans-serif
+  background: #e8e8e8
+.container
+  width: 500px
+  margin: 0 auto
+.clearfix
+  display: inline-block
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+.options
+  position: fixed
+  padding: 20px 0
+  width: 100%
+  text-align: center
+  bottom: 10px
+  animation: show-options 1 ease 1s
+  transition: all 0.5s ease
+  a
+    margin: 0 4px
+    padding: 10px 14px
+    border: 1px #989898 solid
+    border-radius: 4px
+    font-size: 0.8em
+    font-weight: bold
+    color: #565656
+    text-decoration: none
+    &:hover
+    color: #000
+    border-color: #000
+.messages 
+  padding-bottom: 100px
+  p 
+    position: relative
+    display: none
+    float: left
+    clear: both
+    padding: 10px 14px
+    margin: 6px 0
+    max-width: 80%
+    background: #fff
+    border-radius: 4px
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.2)
+  p.question
+    left: 30px
+    &::before
+      display: block
+      position: absolute
+      top: -30px
+      left: -80px
+      transform: scale(0.38)
+      content: url('avatar.png')
+  &.loading
+    animation: text-load infinite ease 0.5s
+  &.response
+    float: right
+    color: #fff
+    background: #d8a731
+    animation: text-animate 1 ease 0.5s
+    .message:first-child
+      p
+        animation: text-pop 1 ease 0.5s
+        &:first-child
+          display: block
+
+@keyframes show-options 
+  0% 
+    bottom: -100px
+  50%
+    bottom: -100px
+  100% 
+    bottom: 10px
+@keyframes text-animate 
+  0% 
+    transform: translateY(30px)
+    opacity: 0
+  100% 
+    transform: translateY(0)
+    opacity: 1
+@keyframes text-pop 
+  0% 
+    transform: scale(0)
+    opacity: 0
+  100% 
+    transform: scale(1)
+    opacity: 1
+@keyframes text-load 
+  0% 
+    transform: scale(1)
+  50% 
+    transform: scale(0.9)
+    box-shadow: inset 0 0 100px #efefef
+  100% 
+    transform: scale(1)
+   
